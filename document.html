@@ -7,13 +7,33 @@
 
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
-    <script type="text/javascript">
-        const rootElement = document.getElementById('root')
-        const element = React.createElement('div', {
-            childern: React.createElement('span', null, 'Hello', 'World'),
-        })
-        console.log(element)
-        ReactDOM.render(element, rootElement)
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        const helloElement = React.createElement('span', null, 'Hello')
+        const worldElement = React.createElement('span', null, 'Wolrd')
+        const element = React.createElement(
+            React.Fragment,
+            null,
+            helloElement,
+            worldElement,
+        )
+        ReactDom.render(element, document.getElementById('root'))
+
+
+
+
+
+
+
+
+
+        // const rootElement = document.getElementById('root')
+        // const element = React.createElement('div', {
+        //     childern: React.createElement('span', null, 'Hello', 'World'),
+        // })
+        // console.log(element)
+        // ReactDOM.render(element, rootElement)
 
         // const element = document.createElement('div')
         // element.textContent = 'Hello world'
